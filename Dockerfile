@@ -10,6 +10,6 @@ RUN cabal install sqlite-simple
 RUN cabal install bytestring
 RUN cabal install lens
 COPY sources.list /etc/apt
-RUN sudo apt update
-RUN sudo apt install cmake -y
+RUN apt update
+RUN apt install cmake -y
 ENTRYPOINT /bin/bash
