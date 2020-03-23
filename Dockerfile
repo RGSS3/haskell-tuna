@@ -10,6 +10,7 @@ RUN cabal install sqlite-simple
 RUN cabal install bytestring
 RUN cabal install lens
 COPY sources.list /etc/apt
+RUN rm /etc/apt/source.list.d/ghc.list
 RUN apt update
-RUN apt install cmake -y
+RUN apt install cmake ssh astyle -y
 ENTRYPOINT /bin/bash
