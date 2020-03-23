@@ -3,6 +3,7 @@ RUN mkdir /root/.cabal
 COPY config /root/.cabal
 COPY config.yaml /root/.stack
 RUN cabal update
+RUN cabal user-config update
 RUN stack update
 RUN cabal install regex-posix
 RUN cabal install http-conduit
